@@ -1,0 +1,74 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --color-background: rgb(21, 25, 32);
+  --color-form-background: rgb(23, 29, 44);
+  --color-heading: rgba(255, 255, 255, 0.95);
+  --color-text: rgba(255, 255, 255, 0.8);
+  --font-heading: 100 5.2rem 'Chivo', sans-serif, Courier, monospace;
+  --font-text: 1.6rem 'Krub', sans-serif, Courier, monospace;
+  --margin-bottom: 48px;
+  --margin-rows: 24px;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font: var(--font-text);
+}
+
+#image-container {
+  background: url(images/main.jpg) center / cover no-repeat;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+#image-container h1{
+  font: var(--font-heading);
+}
+
+.footer {
+  align-self: end;
+  font-size: 1.2rem;
+  padding: 10px;
+}
+
+.footer a {
+  color: var(--color-text);
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  padding: min(5%, 50px);
+  justify-content: space-evenly;
+}
+
+.wrapper > p:last-child {
+  margin-top: var(--margin-rows);
+}
+
+#form-container {
+  padding-bottom: min(5%, 30px);
+}
+
+#sign-up-form{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+#sign-up-form div{
+  display: flex;
+  flex-direction: column;
+}

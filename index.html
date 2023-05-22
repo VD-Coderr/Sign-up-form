@@ -4,11 +4,60 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300&family=Krub:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
   <title>Sign-up</title>
 </head>
 <body>
-  
+  <section id="image-container">
+    <h1>ODIN</h1>
+    <p class="footer">Photo by Elijah O'Donnell on 
+      <a href="https://www.pexels.com/photo/top-view-of-fern-leaves-3473569/">Pexels</a>
+    </p>
+  </section>
+  <section id="content">
+    <div class="wrapper">
+      <p>This is not a real online service!</p>
+      <p>Sign up now to get started.</p>
+      <p>You know you want to.</p>
+    </div>
+    <div class="wrapper" id="form-container">
+      <h5>Let's do this!</h5>
+      <form action="" method="post" id="sign-up-form">
+        <div>
+          <label for="first-name">FIRST NAME</label>
+          <input type="text" id="first-name" name="first-name" placeholder="John">
+        </div>
+        <div>
+          <label for="last-name">LAST NAME</label>
+          <input type="text" id="last-name" name="last-name" placeholder="Lenon">
+        </div>
+        <div>
+          <label for="email">EMAIL</label>
+          <input type="email" id="email" name="email" placeholder="youremail@gmail.com">
+        </div>
+        <div>
+          <label for="phone-number">PHONE NUMBER</label>
+          <input type="number" id="phone-number" name="phone-number">
+        </div>
+        <div>
+          <label for="password">PASSWORD</label>
+          <input type="password" id="password" name="password">
+        </div>
+        <div>
+          <label for="confirm-password">CONFIRM PASSWORD</label>
+          <input type="password" id="confirm-password" name="confirm-password">
+        </div>
+      </form>
+    </div>
+    <div class="cta">  
+      <button type="submit" value="submit" form="">Create Account</button>
+      <p id="sign-in-text">Already have an account? <a href="index.html">Log in</a>
+      </p>
+    </div>
+  </section>
 </body>
 </html>

@@ -8,19 +8,21 @@
 
 :root {
   font-size: 62.5%;
-  --color-background: rgb(21, 25, 32);
-  --color-form-background: rgb(23, 29, 44);
+  --color-background: rgb(19, 24, 32);
+  --color-form-background: rgb(34, 42, 48);
   --color-heading: rgba(255, 255, 255, 0.95);
-  --color-text: rgba(255, 255, 255, 0.8);
+  --color-text: rgba(255, 255, 255, 0.9);
+  --colr-cta: rgba(17, 139, 167, 0.9);
   --font-heading: 100 5.2rem 'Chivo', sans-serif, Courier, monospace;
-  --font-text: 1.6rem 'Krub', sans-serif, Courier, monospace;
+  --font-text: 2rem 'Krub', sans-serif, Courier, monospace;
   --margin-bottom: 48px;
   --margin-rows: 24px;
+  --padding: min(5%, 50px);
 }
 
 body {
   display: grid;
-  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 3fr 5fr;
   background-color: var(--color-background);
   color: var(--color-text);
   font: var(--font-text);
@@ -50,8 +52,11 @@ body {
 #content {
   display: flex;
   flex-direction: column;
-  padding: min(5%, 50px);
   justify-content: space-evenly;
+}
+
+.wrapper, .cta {
+  padding: var(--padding)
 }
 
 .wrapper > p:last-child {
@@ -59,16 +64,43 @@ body {
 }
 
 #form-container {
-  padding-bottom: min(5%, 30px);
+  background-color: var(--color-form-background);
+}
+
+#form-container > h5 {
+  padding-bottom: 16px;
 }
 
 #sign-up-form{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3.2rem;
+  row-gap: 24px;
+  column-gap: min(32px, 3%);
+  background-color: var(--color-form-background);
 }
 
-#sign-up-form div{
+#sign-up-form > div{
   display: flex;
   flex-direction: column;
+}
+
+#sign-up-form input {
+  background-color: var(--color-form-background);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  line-height: 2.4rem;
+  padding: 0 1rem;
+  color: var(--color-text);
+}
+
+button {
+  background-color: var(--colr-cta);
+  padding: 8px 24px;
+  border-radius: 16px;
+  border: none;
+  margin-bottom: min(1%, 16px);
+}
+
+.cta a {
+  color: var(--colr-cta);
 }

@@ -77,6 +77,7 @@ body {
   row-gap: 24px;
   column-gap: min(32px, 3%);
   background-color: var(--color-form-background);
+  font-size: 85%;
 }
 
 #sign-up-form > div{
@@ -91,6 +92,8 @@ body {
   line-height: 2.4rem;
   padding: 0 1rem;
   color: var(--color-text);
+  letter-spacing: 0.1rem;
+  outline: none; /* removed default styling*/
 }
 
 button {
@@ -104,3 +107,13 @@ button {
 .cta a {
   color: var(--colr-cta);
 }
+
+/* #sign-up-form input:focus {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+} */
+
+#sign-up-form input:invalid:focus,
+#sign-up-form .invalid  {
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}
+

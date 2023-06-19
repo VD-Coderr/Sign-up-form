@@ -96,24 +96,24 @@ body {
   outline: none; /* removed default styling*/
 }
 
-button {
+#submit {
   background-color: var(--colr-cta);
   padding: 8px 24px;
-  border-radius: 16px;
+  border-radius: 20px;
   border: none;
   margin-bottom: min(1%, 16px);
+  font: var(--font-text);
 }
 
 .cta a {
   color: var(--colr-cta);
 }
 
-/* #sign-up-form input:focus {
+#sign-up-form input:focus {
   border: 1px solid rgba(255, 255, 255, 0.5);
-} */
-
-#sign-up-form input:invalid:focus,
-#sign-up-form .invalid  {
-  border: 1px solid rgba(255, 0, 0, 0.5);
 }
 
+#sign-up-form input:invalid:focus,
+#sign-up-form input.invalid  {
+  border: 1px solid rgba(255, 0, 0, 0.5);
+}

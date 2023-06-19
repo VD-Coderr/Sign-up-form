@@ -6,16 +6,15 @@ const nameInput = document.querySelectorAll('.name');
 const emailInput = document.querySelector('#email');
 const passwordInput = document.querySelector('#password');
 const passwordConfirmInput = document.querySelector('#confirm-password');
-
 const submitBtn = document.querySelector('#submit');
+const formHTML = document.querySelector('#sign-up-form');
+const formInputs = formHTML.querySelectorAll('input');
 
 function validateInput(input, regex) {
-  if (input.value.match(regex) || input.value.length  === 0) {
+  if (input.value.match(regex) || input.value.length === 0) {
     input.classList.remove('invalid');
-    console.log(input.value)
   } else {
     input.classList.add('invalid');
-    console.log(input.value)
   }
 }
 
@@ -39,4 +38,13 @@ passwordConfirmInput.addEventListener('keyup', ()=> {
   } else {
     passwordConfirmInput.classList.remove('invalid');
   }
+})
+
+formHTML.addEventListener('submit', (event)=> {
+  formInputs.forEach(input => {
+    if (input.classList.contains('invalid')) {
+      event.preventDefault();
+      alert('Check your inputs');
+    }
+  })
 })

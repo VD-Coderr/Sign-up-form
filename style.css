@@ -12,7 +12,7 @@
   --color-form-background: rgb(34, 42, 48);
   --color-heading: rgba(255, 255, 255, 0.95);
   --color-text: rgba(255, 255, 255, 0.9);
-  --colr-cta: rgba(17, 139, 167, 0.9);
+  --color-cta: rgba(17, 139, 167, 0.9);
   --font-heading: 100 5.2rem 'Chivo', sans-serif, Courier, monospace;
   --font-text: 2rem 'Krub', sans-serif, Courier, monospace;
   --margin-bottom: 48px;
@@ -20,6 +20,7 @@
   --padding: min(5%, 50px);
 }
 
+/* positioning */
 body {
   display: grid;
   grid-template-columns: 3fr 5fr;
@@ -27,7 +28,7 @@ body {
   color: var(--color-text);
   font: var(--font-text);
 }
-
+/* image, title, footer */
 #image-container {
   background: url(images/main.jpg) center / cover no-repeat;
   min-height: 100vh;
@@ -49,12 +50,14 @@ body {
   color: var(--color-text);
 }
 
+/* Main content */
 #content {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 
+/* wrapper  goes around form and around first text block */
 .wrapper, .cta {
   padding: var(--padding)
 }
@@ -93,22 +96,56 @@ body {
   padding: 0 1rem;
   color: var(--color-text);
   letter-spacing: 0.1rem;
-  outline: none; /* removed default styling*/
+  outline: none;
 }
 
+/* styling form submit button (Create Account) */
 #submit {
-  background-color: var(--colr-cta);
+  background-color: transparent;
+  color: var(--color-cta);
   padding: 8px 24px;
-  border-radius: 20px;
-  border: none;
   margin-bottom: min(1%, 16px);
   font: var(--font-text);
+  position: relative;
+  border: none;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+#submit::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 2px solid var(--color-cta);
+  border-radius: 20px;
+}
+#submit::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-cta);
+  transition: all 0.3s;
+  border-radius: 20px;
+  z-index: -1;
+}
+#submit:hover::before{
+  width: 100%;
+}
+#submit:hover{
+  color: var(--color-text);
 }
 
 .cta a {
-  color: var(--colr-cta);
+  color: var(--color-cta);
 }
 
+/* styling  form validation (.invalid class is force by JS */
 #sign-up-form input:focus {
   border: 1px solid rgba(255, 255, 255, 0.5);
 }

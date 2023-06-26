@@ -161,7 +161,8 @@ body {
   }
 
   #image-container {
-    min-height: 80svh;
+    min-height: 70vh; /* fllback for older browser*/
+    min-height: 75svh;
   }
 
   #sign-up-form {
